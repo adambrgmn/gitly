@@ -1,0 +1,35 @@
+{
+  "name": "gitly",
+  "version": "0.0.0",
+  "description": "A simple tool to clone your GitHub repositories",
+  "main": "index.js",
+  "repository": "git@github.com:adambrgmn/gitly.git",
+  "author": "Adam Bergman <adam@fransvilhelm.com>",
+  "license": "MIT",
+  "bin": "lib/bin/gitly.js",
+  "scripts": {
+    "prestart": "yarn run build",
+    "start": "NODE_ENV=test node lib/bin/gitly.js",
+    "build": "babel src --out-dir lib",
+    "test": "NODE_ENV=test tape 'test/**/*.spec.js' -r ./test/setup.js | tap-spec"
+  },
+  "dependencies": {
+    "axios": "^0.16.1",
+    "chalk": "^1.1.3",
+    "cli-spinners": "^1.0.0",
+    "inquirer": "^3.0.6",
+    "ora": "^1.2.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.4.0",
+    "babel-register": "^6.24.1",
+    "blue-tape": "^1.0.0",
+    "dotenv": "^4.0.0",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.1.3",
+    "eslint-plugin-import": "^2.2.0",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.6.3"
+  }
+}
